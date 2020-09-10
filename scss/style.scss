@@ -1,0 +1,358 @@
+$water-color: rgba(52,58,64,.5);
+$side-back: #1d809f;
+$banana: #ecb807;
+
+html{
+    scroll-behavior: smooth;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+}
+
+.c-btn{
+    line-height: 60px;
+    padding: 0 40px;
+}
+
+.menu-toggle{
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    background: $water-color;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.menu-toggle:hover{
+    background: #343a40;
+    color: #fff;
+}
+
+.active{
+    right: 0!important;
+}
+
+.sidebar-wrapper{
+    position: fixed;
+    top: 0;
+    right: -250px;
+    background: $side-back;
+    height: 100%;
+    width: 250px;
+    border-left: 1px solid rgba(255,255,255,0.5);
+    transition: all .5s ease;
+    z-index: 98;
+    
+    .sidebar-nav{
+        margin: 0;
+        padding: 0;
+    }
+    ul li:first-child{
+        text-align: center;
+        background: rgba(52,58,64,.1);
+        font-weight: 700;
+        font-size: 25px;
+        letter-spacing: 2px;
+        line-height: 65px;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+        li{
+            padding-left: 20px;
+            line-height: 50px;
+            transition: all .2s;
+            a{
+                color: #fff;
+                text-decoration: none;
+                display: block;
+            }
+        }
+        li:hover{
+            background: rgba(255,255,255,0.2);
+        }
+        li:first-child:hover{
+            background: rgba(52,58,64,.1);
+        }
+    }
+    
+}
+
+#head{
+    position: relative;
+   background: url('../assets/bg-masthead.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 100vh;
+   .head-info{
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       width: 100%;
+       h1{
+           font-size: 50px;
+       }
+       h3{
+           color: #212529;
+       }
+   }
+}
+
+#theme{
+    p{
+        font-size: 22px;
+    }
+}
+
+#offer{
+    padding-top: 100px!important;
+    padding-bottom: 100px!important;
+    background: $side-back;
+    h6{
+        color: $banana;
+    }
+    h1,h4,p{
+        color: #fff;
+    }
+    i{
+        font-size: 40px;
+        background: #fff;
+        color: $side-back;
+        padding: 35px;
+    }
+}
+
+#text{
+    background: url('../assets/bg-callout.jpg');
+    background-size: cover;
+    min-height: 90vh;
+    h1{
+        color: #000;
+        max-width: 35rem;
+        font-size: 3.5rem;
+    }
+    .text-info{
+        margin-top: 135px;
+    }
+}
+
+#portfolio{
+    padding: 100px 0;
+    h6{
+        color: #ecb807;
+    }
+    .portfolio-content{
+        cursor: pointer;
+        position: relative;
+        display: block;
+        overflow: hidden;
+        clip-path: inset(0);
+        transition: all .4s ease-in-out;
+        .caption{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transition: all .4s ease-in-out;
+            
+            .cap-content{
+                color: #fff;
+                margin-left: 5rem;
+                margin-top: 12rem;
+                margin-right: 5rem;
+            }
+        }
+    }
+    .col-md-6:hover .portfolio-content{
+        clip-path: inset(2rem);
+    }
+    .col-md-6:hover .portfolio-content .caption{
+       background: rgba(29,128,159,.9);
+    }
+    .col-md-6{
+        padding: 0;
+        padding: 0;
+    }
+}
+
+#testimonial{
+    background: #343a40;
+    h2{
+        color: #fff;
+    }
+    .carousel-item{
+        min-height: 30vh;
+        
+        h4{
+            color: #000;
+        }
+        .carousel-caption{
+            margin-bottom: 2%;
+        }
+    }
+}
+
+#button{
+    padding: 100px 0;
+    h2{
+        color: #fff;
+    }
+    background: $side-back;
+}
+
+#footer{
+    padding: 120px 0;
+    .foot-icon{
+        font-size: 25px;
+        background: $side-back;
+        color: $side-back;
+        padding: 20px;
+        color: #fff;
+        margin: 10px;
+        transition: all .2s ease;
+        cursor: pointer;
+    }
+    .foot-icon:hover{
+        background: #1a647a;
+    }
+    .scroll-button{
+        position: fixed;
+        bottom: 15px;
+        right: 25px;
+        background: $water-color;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #fff;
+        cursor: pointer;
+        z-index: 99;
+    }
+    .scroll-button:hover{
+        background: #343a40;
+        color: #fff;
+    }
+}
+
+@media(max-width: 991px){
+    #head{
+        height: 70vh;
+    }
+    #portfolio{
+        .portfolio-content{
+            .cap-content{
+                margin-top: 5rem!important;
+            }
+        }
+    }
+}
+
+@media(max-width: 767px){
+    #text{
+        .text-info{
+            margin-top: 70px;
+        }
+    }
+    #portfolio{
+        .portfolio-content{
+            .cap-content{
+                margin-top: 10rem!important;
+            }
+        }
+    }
+    #testimonial{
+        .carousel-item{
+            min-height: 40vh;
+        }
+    }
+}
+
+@media(max-width: 575px){
+    .c-btn{
+        line-height: 50px;
+        padding: 0 30px;
+    }
+    #head{
+        .head-info{
+            h1{
+                font-size: 40px;
+            }
+            h3{
+                font-size: 23px;
+            }
+        }
+    }
+}
+
+@media(max-width: 480px){
+    .c-btn{
+        font-size: 15px;
+    }
+    #head{
+        height: 50vh;
+        .head-info{
+            margin-top: 30px;
+            h1{
+                font-size: 27px;
+            }
+            h3{
+                font-size: 18px;
+            }
+        }
+    }
+    #text{
+        .text-info{
+            h1{
+                font-size: 2.5rem;
+                max-width: 100%;
+            }
+        }
+    }
+    #portfolio{
+        .portfolio-content{
+            .cap-content{
+                margin-top: 5rem!important;
+                margin-right: 3rem!important;
+                margin-left: 3rem!important;
+            }
+        }
+    }
+    #testimonial{
+        .carousel-item{
+            h4{
+                font-size: 20px;
+            }
+        }
+    }
+    #button{
+        h2{
+            font-size: 25px;
+        }
+    }
+}
+
+
+@media(max-width: 320px){
+    #text{
+        .text-info{
+            h1{
+                font-size: 2rem;
+                max-width: 100%;
+            }
+        }
+    }
+    #portfolio{
+        .portfolio-content{
+            .cap-content{
+                margin-top: 3rem!important;
+            }
+        }
+    }
+}
+
